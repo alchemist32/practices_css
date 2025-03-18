@@ -1,2 +1,2 @@
 # practices_css
-store here the practices from the CSS clasess
+Store here the practices from the CSS classes
