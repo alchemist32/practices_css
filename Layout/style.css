@@ -90,11 +90,14 @@ header {
 }
 
 .container {
-  margin-left: 240px; 
-  padding: 80px 20px;
+  position: fixed;
+  width: 80px;
+  height: 200px;
+  padding-top: 200px;
+  padding-left: 70px;
   color: white;
   overflow-x: hidden;
-  margin-bottom: 60px; /* Evita que el contenido quede debajo del footer */
+  
 }
 
 .header-container {
@@ -103,6 +106,7 @@ header {
   align-items: center;
   color: white;
   padding: 16px;
+  margin-right: 40px;
 }
 
 .header-title {
@@ -156,70 +160,108 @@ header {
 
 .containerimages {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(5, 1fr);
+  grid-template-columns: repeat(4, 1fr); /* 4 columnas */
+  grid-template-rows: repeat(5, 1fr); /* 5 filas */
   grid-column-gap: 10px;
   grid-row-gap: 10px;
-  margin-top: 20px; /* Espacio para no solaparse con el header */
-  padding-bottom: 60px; /* Espacio para no solaparse con el footer */
-  height: calc(100% - 50px); /* Ajusta la altura para no solaparse con el header y footer */
-  width: calc(100% - 240px); /* Ajusta el ancho del contenedor */
-  position: absolute;
+  padding-bottom: 120px; /* Espacio para no solaparse con el footer */
+  position: relative;
+  padding-left: 250px;
+  padding-right: 40px;
+  padding-top: 10px;
+  margin-right: 40px;
+  margin-left: 10px;
   top: 50px; /* Ajusta el top para que no se solape con el header */
-  right: 0; /* Lo alinea al lado derecho de la pantalla */
   box-sizing: border-box;
 }
   
   .div1 { grid-area: 1 / 1 / 2 / 2; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div2 { grid-area: 1 / 2 / 2 / 3; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div3 { grid-area: 1 / 3 / 3 / 5; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div4 { grid-area: 2 / 1 / 3 / 2; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div5 { grid-area: 2 / 2 / 3 / 3; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div6 { grid-area: 3 / 1 / 5 / 3; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div7 { grid-area: 3 / 3 / 4 / 4; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div8 { grid-area: 3 / 4 / 4 / 5; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div9 { grid-area: 4 / 3 / 5 / 4; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div10 { grid-area: 4 / 4 / 5 / 5; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div11 { grid-area: 5 / 1 / 6 / 2; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div12 { grid-area: 5 / 2 / 6 / 3; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div13 { grid-area: 5 / 3 / 6 / 4; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
   .div14 { grid-area: 5 / 4 / 6 / 5; 
-    background-color: grey;
-    border-radius: 5%;}
+    background-color: #0d243f;
+    border-radius: 5%;
+    aspect-ratio: 1;}
+
+    .div1 img, .div2 img, .div3 img, .div4 img, .div5 img, .div6 img, .div7 img, .div8 img, .div9 img, .div10 img, .div11 img, .div12 img, .div13 img, .div14 img {
+      width: 100%; /* La imagen tomará todo el ancho del contenedor */
+      height: 90%; /* La imagen tomará todo el alto del contenedor */
+      object-fit: cover; /* Asegura que la imagen cubra completamente el área del div sin distorsionar */
+      border-radius: 5%; /* Mantiene el borde redondeado */
+    }
+
+    /* Asegura que el texto de los elementos <p> dentro de los divs sea blanco y en negrita */
+.div1 p, .div2 p, .div3 p, .div4 p, .div5 p, .div6 p, .div7 p, .div8 p, .div9 p, .div10 p, .div11 p, .div12 p, .div13 p, .div14 p {
+  color: white; /* El texto será blanco */
+  font-weight: bold; /* El texto será en negrita */
+  margin: 0; /* Elimina los márgenes predeterminados */
+  padding: 10px; /* Agrega un poco de espacio alrededor del texto */
+}
+
+.div1:hover, .div2:hover, .div3:hover, .div4:hover, .div5:hover, .div6:hover, .div7:hover, .div8:hover, .div9:hover, .div10:hover, .div11:hover, .div12:hover, .div13:hover, .div14:hover {
+  background-color: #194679;
+}
+
 
 footer {
+  justify-content: start;
   color: white;
   padding: 15px 0;
-  width: calc(100% - 240px); 
-  position: relative; 
+  padding-left: 0px;
+  position: relative;
+  width: auto;
   bottom: 0;
   margin-top: 20px; 
+  margin-left: 240px;
 }
 
 footer ul {
@@ -227,13 +269,12 @@ footer ul {
   margin: 0;
   padding: 0;
   display: flex;
-  justify-content: center;
 }
 
 footer a {
   color: white;
   text-decoration: none;
-  font-size: 14px;
+  font-size: 12px;
 }
 
 footer a:hover {
