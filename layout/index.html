@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tumblr Replica</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Checkbox para controlar el menú -->
+    <input type="checkbox" id="menu-toggle" hidden>
+
+    <!-- Botón del menú móvil -->
+    <label for="menu-toggle" class="mobile-menu-icon">
+        <!-- SVG para abrir el menú -->
+        <svg class="menu-icon open-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <path d="M4 6H20M4 12H20M4 18H20" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+            </g>
+        </svg>
+        <!-- SVG para cerrar el menú -->
+        <svg class="menu-icon close-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <g id="style=fill">
+                    <g id="error-box">
+                        <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M1.25 8C1.25 4.27208 4.27208 1.25 8 1.25L16 1.25C19.7279 1.25 22.75 4.27208 22.75 8L22.75 16C22.75 19.7279 19.7279 22.75 16 22.75L8 22.75C4.27208 22.75 1.25 19.7279 1.25 16L1.25 8ZM8.46967 8.46966C8.76257 8.17676 9.23744 8.17677 9.53033 8.46966L12 10.9393L14.4697 8.46966C14.7626 8.17676 15.2374 8.17677 15.5303 8.46966C15.8232 8.76256 15.8232 9.23743 15.5303 9.53032L13.0606 12L15.5303 14.4697C15.8232 14.7626 15.8232 15.2374 15.5303 15.5303C15.2374 15.8232 14.7625 15.8232 14.4696 15.5303L12 13.0606L9.53033 15.5303C9.23743 15.8232 8.76256 15.8232 8.46967 15.5303C8.17678 15.2374 8.17678 14.7625 8.46967 14.4696L10.9393 12L8.46967 9.53032C8.17678 9.23742 8.17678 8.76255 8.46967 8.46966Z" fill="#FFFFFF"></path>
+                    </g>
+                </g>
+            </g>
+        </svg>
+    </label>
+
+    <!-- SVG de Tumblr para vista móvil -->
+    <div class="mobile-logo">
+        <svg viewBox="-4 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#ffffff" stroke="#ffffff">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+            <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+            <g id="SVGRepo_iconCarrier">
+                <title>tumblr [#ffffff]</title>
+                <desc>Created with Sketch.</desc>
+                <defs></defs>
+                <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                    <g id="Dribbble-Light-Preview" transform="translate(-184.000000, -7399.000000)" fill="#ffffff">
+                        <g id="icons" transform="translate(56.000000, 160.000000)">
+                            <path d="M139.00148,7254.975 L140,7257.827 C139.622944,7258.358 137.91209,7258.973 136.376708,7258.998 C131.82592,7259.073 130.088955,7255.895 130.088955,7253.657 L130.088955,7247 L128,7247 L128,7244.539 C131.169989,7243.445 131.931413,7240.708 132.110018,7239.149 C132.122552,7239.042 132.210288,7239 132.261467,7239 L135.311341,7239 L135.311341,7244 L139.489251,7244 L139.489251,7247 L135.311341,7247 L135.311341,7253.349 C135.311341,7254.195 135.646619,7255.363 137.318827,7255.32 C137.873444,7255.307 138.612934,7255.152 139.00148,7254.975"></path>
+                        </g>
+                    </g>
+                </g>
+            </g>
+        </svg>
+        <!-- Botón "Crear" debajo del logo -->
+        <button class="create-community-btn">Crear</button>
+    </div>
+
+    <!-- SVG de la lupa -->
+    <svg class="search-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm10.707 14.293-4.387-4.387a8.001 8.001 0 1 0-1.414 1.414l4.387 4.387a1 1 0 0 0 1.414-1.414z" fill="#ffffff"></path>
+    </svg>
+
+    <!-- Menú izquierdo -->
+    <nav class="left-menu">
+        <ul>
+            <h3 class="Titulo__menu">Tumblr</h3>
+            <li>
+                <a href="#">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <g id="Navigation / Compass">
+                                <g id="Vector">
+                                    <path d="M3 12C3 16.9706 7.02944 21 12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                    <path d="M10.5 10.5L16 8L13.5 13.5L8 16L10.5 10.5Z" stroke="#000000" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    Explorar
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg class="icon" fill="#949494" height="20px" width="20px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 611.998 611.998" xml:space="preserve" stroke="#949494">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <g>
+                                <g>
+                                    <path d="M382.167,150.945c9.702,10.875,16.557,24.306,20.381,39.921c3.629,14.822,4.44,31.308,2.414,49.006 c-0.751,6.546-1.861,13.96-3.479,21.802c12.532,12.135,28.95,19.839,50.296,19.838c59.22-0.005,80.529-59.3,86.105-108.006 c6.872-60.004-21.498-105.163-86.105-105.163c-50.698,0-79.079,27.82-85.628,68.798 C372.076,141.062,377.449,145.655,382.167,150.945z"></path>
+                                    <path d="M611.973,422.704c-0.645-18.899-2.861-37.887-6.161-56.495c-3.992-22.539-9.08-55.585-28.759-70.275 c-11.38-8.491-26.117-11.278-39.143-16.398c-6.343-2.492-12.024-4.967-17.354-7.784c-17.995,19.734-41.459,30.055-68.782,30.057 c-21.261,0-40.172-6.281-56.001-18.358c-3.644,11.272-8.522,22.623-15.044,32.994c5.728,3.449,11.923,6.204,19.451,9.162 c3.332,1.31,6.99,2.506,10.864,3.771c10.472,3.422,22.339,7.301,32.994,15.255c25.329,18.907,31.564,54.336,36.117,80.207 l0.49,2.792c2.355,13.266,4.084,26.299,5.197,38.961c20.215-2.071,40.327-5.61,60.047-9.774 c15.941-3.365,31.774-7.471,47.109-13.003C605.247,439.397,612.476,437.343,611.973,422.704z"></path>
+                                </g>
+                            </g>
+                        </g>
+                    </svg>
+                    Comunidades
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <svg class="icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                        <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <path d="M2 12.0261C2 17.1723 5.86713 21.413 10.8468 21.9863C11.5816 22.0709 12.2938 21.7576 12.8168 21.2333C13.4703 20.5781 13.4703 19.5159 12.8168 18.8607C12.2938 18.3364 11.8674 17.5541 12.2619 16.9268C13.8385 14.4192 22 20.178 22 12.0261C22 6.48884 17.5228 2 12 2C6.47715 2 2 6.48884 2 12.0261Z" stroke="#555658" stroke-width="1.5"></path>
+                            <circle cx="17.5" cy="11.5" r="0.75" stroke="#555658" stroke-width="1.5"></circle>
+                            <circle cx="6.5" cy="11.5" r="0.75" stroke="#555658" stroke-width="1.5"></circle>
+                            <path d="M10.335 6.99976C10.335 7.41397 9.99917 7.74976 9.58496 7.74976C9.17075 7.74976 8.83496 7.41397 8.83496 6.99976C8.83496 6.58554 9.17075 6.24976 9.58496 6.24976C9.99917 6.24976 10.335 6.58554 10.335 6.99976Z" stroke="#555658" stroke-width="1.5"></path>
+                            <path d="M15.25 7C15.25 7.41421 14.9142 7.75 14.5 7.75C14.0858 7.75 13.75 7.41421 13.75 7C13.75 6.58579 14.0858 6.25 14.5 6.25C14.9142 6.25 15.25 6.58579 15.25 7Z" stroke="#555658" stroke-width="1.5"></path>
+                        </g>
+                    </svg>
+                    Paleta de colores
+                </a>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Barra superior -->
+    <div class="top-bar">
+        <h1 class="Titulo">Browse Communities</h1>
+        <div class="top-bar-actions">
+            <button class="create-community-btn">Crea una comunidad</button>
+            <div class="search-bar">
+                <svg class="icono__menu-izquierdo" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" class="search-icon">
+                    <path d="M11 4a7 7 0 1 0 0 14 7 7 0 0 0 0-14zm0 2a5 5 0 1 1 0 10 5 5 0 0 1 0-10zm10.707 14.293-4.387-4.387a8.001 8.001 0 1 0-1.414 1.414l4.387 4.387a1 1 0 0 0 1.414-1.414z" fill="#9f9999"></path>
+                </svg>
+                <input type="text" placeholder="Search communities..." />
+            </div>
+        </div>
+    </div>
+    
+    <main>
+        <div class="grid-container">
+            <div class="grid-item"><img src="https://wallpapers.com/images/featured/fondods-esteticos-de-tumblr-g6or40efdu2wxhgq.jpg" alt="Estéticas"><span>Estéticas</span></div>
+            <div class="grid-item"><img src="https://64.media.tumblr.com/175c52527c2466fa76ba2424a544e9dd/tumblr_ob2glypbl21tnxsbko2_640.pnj" alt="Anime"><span>Anime</span></div>
+            <div class="grid-item"><img src="https://i.pinimg.com/736x/ea/a5/a1/eaa5a1e4368f36c621f298872e7f11e1.jpg" alt="Gato Ilustrado"><span>Arte</span></div>
+            <div class="grid-item"><img src="https://th.bing.com/th/id/R.f02f001276a3fb69fdb769f0dc6d58cf?rik=I8ZYKBPv2YpCOQ&riu=http%3a%2f%2fstatic.tumblr.com%2ffc10eae44f4a79c14c1faf32681f8e1c%2f24rnppg%2fwVFnr76m4%2ftumblr_static_btv417le4ogsg08wk4s44400c.jpg&ehk=f3RL8Rv%2bagsmencj2WE6bU0pHp7OdPq1rrSshVolWI8%3d&risl=&pid=ImgRaw&r=0" alt="One Piece"><span>One Piece</span></div>
+            <div class="grid-item"><img src="https://th.bing.com/th/id/OIP.MQZUE7y99GCsnK_vkB3u2wAAAA?rs=1&pid=ImgDetMain" alt="Libros"><span>Libros</span></div>
+        </div>
+
+    </main>
+
+    <!-- Pie de página -->
+    <footer>
+        <p>&copy; 2025 Mi Tumblr Replica. Todos los derechos reservados.</p>
+    </footer>
+</body>
+</html>

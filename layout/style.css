@@ -1,0 +1,848 @@
+/* Restablecer estilos predeterminados */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Estilos globales */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #000000;
+    color: #ccc; /* Texto en gris claro */
+    line-height: 1.6;
+    padding-top: 60px; /* Ajusta este valor según la altura de la barra superior */
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Asegura que el cuerpo ocupe toda la altura de la ventana */
+    margin: 0;
+}
+
+/* Encabezado */
+header {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .logo {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+header nav ul {
+    list-style: none;
+    display: flex;
+}
+
+header nav ul li {
+    margin-left: 20px;
+}
+
+header nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    padding: 5px 10px;
+    transition: background-color 0.3s ease;
+}
+
+header nav ul li a:hover {
+    background-color: #575757;
+    border-radius: 5px;
+}
+
+/* Estilos del feed principal */
+main {
+    margin-left: 220px; /* Deja espacio para el menú */
+    padding: 20px;
+    background-color: #111111; /* Fondo gris oscuro */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Línea delgada y tenue */
+    border-radius: 8px; /* Bordes redondeados */
+    flex: 1; /* Hace que el contenido principal ocupe el espacio disponible */
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra la tabla de imágenes horizontalmente */
+}
+
+.feed {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.post {
+    background-color: #1a1a1a; /* Fondo gris oscuro */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra tenue */
+    border: 1px solid rgba(255, 255, 255, 0.1); /* Línea delgada y tenue */
+}
+
+.post-header {
+    margin-bottom: 15px;
+}
+
+.post-header h2 {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.post-header p {
+    font-size: 0.9rem;
+    color: #777;
+}
+
+post-content p {
+    font-size: 1rem;
+}
+
+/* Pie de página */
+footer {
+    background-color: #000000;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    margin-top: auto; /* Empuja el footer al final */
+    border-top: 1px solid rgba(255, 255, 255, 0.1); /* Línea delgada y tenue */
+}
+
+
+
+/* Estilos del menú de navegación */
+nav {
+    position: fixed;
+    z-index: 30;
+    top: 0;
+    left: 0;
+    width: 15%; /* Ancho del menú */
+    height: 100%; /* Altura completa de la ventana */
+    background-color: #000000; /* Color de fondo */
+    padding: 20px 0; /* Espaciado interno */
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1); /* Sombra para el menú */
+    display: flex;
+    flex-direction: column; /* Cambia la disposición a vertical */
+    align-items: center; /* Centra los elementos horizontalmente */
+   
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column; /* Asegura que los elementos estén en columna */
+    gap: 15px; /* Espaciado entre los elementos */
+}
+
+nav ul li {
+    margin: 0; /* Elimina el margen vertical */
+}
+
+nav ul li a {
+    display: flex; /* Asegura que el ícono y el texto estén en línea */
+    align-items: center; /* Centra verticalmente el ícono y el texto */
+    gap: 8px; /* Espaciado entre el ícono y el texto */
+    text-decoration: none;
+    color: white; /* Color del texto */
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+nav ul li a .icon {
+    width: 20px; /* Ajusta el tamaño del ícono */
+    height: 20px;
+    fill: currentColor; /* Hace que el ícono herede el color del texto */
+}
+
+nav ul li a.communities-icon .icon {
+    fill: #000000; /* Color específico para el ícono de Comunidades */
+}
+
+nav ul li a:hover {
+    background-color: #797875; /* Color de fondo al pasar el mouse */
+}
+
+.highlight {
+    font-family: 'Playfair Display', 'Bookman Old Style', Georgia, serif; /* Fuentes similares a Tumblr */
+    font-size: 3rem; /* Ajusta el tamaño según sea necesario */
+    font-weight: bold; /* Aplica negrita */
+    color: white !important; /* Asegura que el color sea blanco */
+    pointer-events: none; /* Desactiva interacciones como hover y clic */
+    text-decoration: none; /* Asegura que no haya subrayado */
+    background-color: transparent !important; /* Elimina cualquier fondo */
+}
+
+.highlight:hover {
+    background-color: transparent !important; /* Asegura que no haya fondo al pasar el mouse */
+    color: white; /* Mantiene el color blanco */
+    text-decoration: none; /* Elimina cualquier subrayado */
+}
+
+/* Estilo para la barra superior */
+.top-bar {
+    position: fixed; /* Fija la barra en la parte superior */
+    z-index: 1000; /* Asegura que esté por encima de otros elementos */
+    top: 0;
+    right: 0;
+    width: 85%; /* Ocupa todo el ancho de la pantalla */
+    display: flex;
+    justify-content: space-between; /* Espacia los elementos a los extremos */
+    align-items: center;
+    padding: 10px 20px;
+    background-color: #000000;
+}
+
+/* Estilo para el menú de navegación */
+.top-bar nav {
+    display: flex;
+    align-items: center;
+}
+
+.top-bar nav ul {
+    display: flex;
+    list-style: none;
+    gap: 15px; /* Espaciado entre los elementos del menú */
+    margin: 0;
+    padding: 0;
+}
+
+.top-bar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 8px; /* Espaciado entre el texto y el ícono */
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.top-bar nav ul li a:hover {
+    background-color: #575757;
+}
+
+/* Contenedor de acciones en la barra superior */
+.top-bar-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px; /* Espaciado entre el botón y la barra de búsqueda */
+}
+
+/* Estilo para la barra de búsqueda */
+.search-bar {
+    display: flex;
+    align-items: center;
+    background-color: transparent;
+    border: 1px solid #a2a2a2;
+    border-radius: 20px;
+    padding: 5px 10px;
+    width: 250px;
+}
+
+.search-bar input {
+    border: none;
+    outline: none;
+    background: transparent;
+    padding: 5px;
+    flex: 1;
+    font-size: 0.9rem;
+    color: #333;
+}
+
+.search-bar .search-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    fill: #9f9999;
+}
+
+/* Estilo para el botón de crear comunidad */
+.create-community-btn {
+    background-color: #007bff;
+    color: #000000;
+    border: none;
+    border-radius: 50px;
+    padding: 10px 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.create-community-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Estilo para el menú izquierdo */
+.left-menu {
+    position: fixed;
+    top: 0;
+    left: 0; /* Menú visible por defecto */
+    width: 200px; /* Ancho del menú */
+    height: 100%; /* Altura completa de la ventana */
+    background-color: #000000; /* Fondo negro */
+    padding: 20px 0; /* Espaciado interno */
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Alinea los elementos al inicio */
+    z-index: 1000;
+    transition: transform 0.3s ease; /* Transición suave */
+}
+
+/* Mostrar el menú cuando el checkbox está marcado */
+#menu-toggle:checked ~ .left-menu {
+    transform: translateX(0); /* Mueve el menú a su posición visible */
+    left: 0;
+}
+
+.left-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+}
+
+.left-menu ul li {
+    margin-bottom: 15px; /* Espaciado entre elementos */
+    width: 100%; /* Asegura que los enlaces ocupen todo el ancho */
+}
+
+.left-menu ul li a {
+    display: flex; /* Asegura que el ícono y el texto estén en línea */
+    align-items: center; /* Centra verticalmente el ícono y el texto */
+    gap: 10px; /* Espaciado entre el ícono y el texto */
+    text-decoration: none;
+    color: white; /* Color del texto */
+    font-size: 1rem;
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: transparent; /* Elimina el fondo por defecto */
+}
+
+/* Cambiar el fondo al pasar el mouse */
+.left-menu ul li a:hover {
+    background-color: #222222; /* Fondo gris más oscuro al pasar el mouse */
+}
+
+/* Estilo para los íconos SVG */
+.left-menu ul li a .icon {
+    width: 20px; /* Ajusta el tamaño del ícono */
+    height: 20px;
+    fill: currentColor; /* Hace que el ícono herede el color del texto */
+}
+
+/* Cambiar el fondo al pasar el mouse */
+.left-menu ul li a:hover {
+    background-color: #222222; /* Fondo gris más oscuro al pasar el mouse */
+}
+
+/* Asegurar que los íconos SVG estén a la izquierda del texto */
+nav ul li a {
+    display: flex; /* Asegura que el ícono y el texto estén en línea */
+    align-items: center; /* Centra verticalmente el ícono y el texto */
+    gap: 8px; /* Espaciado entre el ícono y el texto */
+    text-decoration: none;
+    color: white; /* Color del texto */
+    font-size: 1rem;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+/* Ajustar la posición de los íconos a la izquierda */
+.icono__menu-izquierdo {
+    width: 20px;
+    height: 20px;
+    left: 0;
+    margin-right: 10px; /* Espaciado entre el ícono y el texto */
+    margin-left: 0; /* Asegura que los íconos estén alineados a la izquierda */
+}
+
+/* Reducir el tamaño de la palabra "Browse Communities" */
+.Titulo {
+    font-size: 1.5rem; /* Ajusta el tamaño según sea necesario */
+    font-weight: normal; /* Cambia el peso de la fuente si es necesario */
+    color: white; /* Asegura que el texto sea visible */
+}
+
+.Titulo__menu {
+    font-family: 'Playfair Display', 'Bookman Old Style', Georgia, serif;;
+    font-size: 200%; /* Ajusta el tamaño según sea necesario */
+    font-weight: bold; /* Cambia el peso de la fuente si es necesario */
+    color: white; /* Asegura que el texto sea visible */;
+    text-align: center;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.grid-container {
+    display: grid;
+    gap: 20px; /* Espaciado entre las imágenes */
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* Diseño responsivo */
+    width: 100%;
+    max-width: 1200px; /* Ancho máximo de la tabla */
+    padding: 20px;
+    box-sizing: border-box; /* Incluye el padding en el ancho total */
+    margin-top: 25%; /* Agrega espacio para evitar que se sobreponga con el encabezado */
+}
+.grid-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); /* Sombra para las imágenes */
+}
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.grid-item span {
+    position: absolute;
+    bottom: 0%;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: white;
+    padding: 8px;
+    font-size: 16px;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+/* Grid Layout basado en la imagen */
+.grid-item:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+.grid-item:nth-child(2) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+.grid-item:nth-child(3) {
+    grid-column: span 1;
+    grid-row: span 2;
+}
+.grid-item:nth-child(4) {
+    grid-column: span 2;
+    grid-row: span 1;
+}
+
+.grid-item:nth-child(5) {
+    grid-column: span 1;
+    grid-row: span 1;
+}
+
+/* Vista para dispositivos móviles (ancho máximo de 375px) */
+@media (max-width: 375px) {
+    /* Ajustar el cuerpo */
+    body {
+        flex-direction: column; /* Cambia la disposición a vertical */
+        align-items: flex-start; /* Alinea los elementos al inicio */
+        padding: 0;
+    }
+
+    /* Ajustar el encabezado */
+    header {
+        flex-direction: column; /* Cambia la disposición a vertical */
+        text-align: center; /* Centra el contenido */
+        padding: 10px;
+    }
+
+    header nav ul {
+        flex-direction: column; /* Cambia los enlaces a una lista vertical */
+        align-items: center;
+        gap: 10px; /* Espaciado entre los enlaces */
+    }
+
+    header nav ul li {
+        margin: 0; /* Elimina márgenes adicionales */
+    }
+
+    /* Ajustar el menú izquierdo */
+    .left-menu {
+        position: static; /* Cambia el menú a una posición normal */
+        width: 100%; /* Ocupa todo el ancho */
+        height: auto; /* Ajusta la altura automáticamente */
+        padding: 10px;
+    }
+
+    .left-menu ul {
+        flex-direction: column; /* Cambia los elementos a una lista vertical */
+        gap: 10px; /* Espaciado entre los elementos */
+    }
+
+    /* Ajustar la cuadrícula de imágenes */
+    .grid-container {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr); /* Dos columnas en pantallas pequeñas */
+        gap: 10px; /* Espaciado entre las imágenes */
+        padding: 10px; /* Reduce el padding general */
+        margin-top: 20px; /* Ajusta el margen superior */
+    }
+
+    .grid-item {
+        width: 100%; /* Asegura que cada elemento ocupe el ancho completo de su celda */
+    }
+
+    .grid-item img {
+        width: 100%; /* Asegura que las imágenes ocupen todo el ancho del contenedor */
+        height: auto; /* Mantiene la proporción original */
+    }
+
+    /* Ajustar el pie de página */
+    footer {
+        font-size: 0.8rem; /* Reduce el tamaño del texto */
+        padding: 10px; /* Ajusta el padding */
+        text-align: center; /* Centra el texto */
+    }
+}
+
+/* Ocultar el menú en dispositivos móviles */
+@media (max-width: 768px) {
+    .left-menu {
+        left: -100%; /* Oculta el menú fuera de la pantalla */
+    }
+
+    /* Mostrar el menú cuando el checkbox está marcado */
+    #menu-toggle:checked ~ .left-menu {
+        transform: translateX(0); /* Mueve el menú a su posición visible */
+        left: 0;
+    }
+}
+
+/* Ocultar la barra superior en dispositivos móviles */
+@media (max-width: 768px) {
+    .top-bar {
+        display: none; /* Oculta la barra superior */
+    }
+}
+
+/* Estilo para el ícono del menú móvil */
+.mobile-menu-icon {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 1100;
+    cursor: pointer;
+}
+
+.mobile-menu-icon svg {
+    width: 30px;
+    height: 30px;
+    fill: #fff; /* Cambia el color según sea necesario */
+}
+
+/* Mostrar el ícono solo en dispositivos móviles */
+@media (max-width: 768px) {
+    .mobile-menu-icon {
+        display: block;
+    }
+
+    .left-menu {
+        transform: translateX(-100%); /* Ocultar el menú por defecto */
+        transition: transform 0.3s ease;
+    }
+
+    .left-menu:hover {
+        transform: translateX(0); /* Mostrar el menú al pasar el mouse */
+    }
+}
+
+/* Ocultar el ícono en pantallas grandes */
+@media (min-width: 769px) {
+    .mobile-menu-icon {
+        display: none;
+    }
+}
+
+/* Estilo para los íconos del menú */
+.menu-icon {
+    width: 30px;
+    height: 30px;
+    fill: #fff;
+    display: none; /* Oculta ambos íconos por defecto */
+}
+
+/* Mostrar el ícono de abrir por defecto */
+.open-icon {
+    display: block;
+}
+
+/* Cambiar al ícono de cerrar cuando el menú está abierto */
+#menu-toggle:checked + .mobile-menu-icon .open-icon {
+    display: none;
+}
+
+#menu-toggle:checked + .mobile-menu-icon .close-icon {
+    display: block;
+}
+
+/* Estilo para los enlaces del menú izquierdo */
+.left-menu ul li a {
+    display: flex; /* Asegura que el ícono y el texto estén en línea */
+    align-items: center; /* Centra verticalmente el ícono y el texto */
+    gap: 10px; /* Espaciado entre el ícono y el texto */
+    text-decoration: none;
+    color: white; /* Color del texto */
+    font-size: 1rem;
+    padding: 10px 15px; /* Espaciado interno */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: transparent; /* Elimina el fondo por defecto */
+}
+
+/* Cambiar el fondo al pasar el mouse */
+.left-menu ul li a:hover {
+    background-color: #222222; /* Fondo gris más oscuro al pasar el mouse */
+}
+
+/* Estilo para los enlaces del menú superior (si aplica) */
+.top-bar nav ul li a {
+    display: flex; /* Asegura que el ícono y el texto estén en línea */
+    align-items: center; /* Centra verticalmente el ícono y el texto */
+    gap: 8px; /* Espaciado entre el ícono y el texto */
+    text-decoration: none;
+    color: white; /* Color del texto */
+    font-size: 1rem;
+    padding: 5px 10px; /* Espaciado interno */
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    background-color: transparent; /* Elimina el fondo por defecto */
+}
+
+/* Cambiar el fondo al pasar el mouse en el menú superior */
+.top-bar nav ul li a:hover {
+    background-color: #575757; /* Fondo gris más oscuro al pasar el mouse */
+}
+
+/* Ocultar el logo por defecto */
+.mobile-logo {
+    display: none;
+}
+
+/* Mostrar y centrar el logo en dispositivos móviles */
+@media (max-width: 768px) {
+    .mobile-logo {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        background-color: #000; /* Fondo negro para el logo */
+        padding: 10px 0; /* Espaciado alrededor del logo */
+        position: fixed; /* Fija el logo en la parte superior */
+        top: 0; /* Posición en la parte superior de la pantalla */
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho de la pantalla */
+        z-index: 1000; /* Asegura que el logo esté encima de otros elementos */
+    }
+
+    .mobile-logo svg {
+        width: 40px; /* Ajusta el tamaño del ícono */
+        height: 40px;
+    }
+
+    /* Ajustar la barra superior para que no se superponga con el logo */
+    .top-bar {
+        margin-top: 60px; /* Deja espacio debajo del logo */
+    }
+}
+
+/* Ocultar el logo por defecto */
+.mobile-logo {
+    display: none;
+}
+
+/* Mostrar y centrar el logo en dispositivos móviles */
+@media (max-width: 768px) {
+    .mobile-logo {
+        display: flex;
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        background-color: #000; /* Fondo negro para el logo */
+        padding: 10px 0; /* Espaciado alrededor del logo */
+    }
+
+    .mobile-logo svg {
+        width: 40px; /* Ajusta el tamaño del ícono */
+        height: 40px;
+    }
+
+    .top-bar {
+        margin-top: 0; /* Asegura que no haya espacio adicional */
+    }
+}
+
+/* Ajustar el botón "Crear" solo en dispositivos móviles */
+@media (max-width: 768px) {
+    .top-bar-actions .create-community-btn {
+        font-size: 0.8rem; /* Reduce el tamaño del texto */
+        background-color: transparent; /* Fondo transparente */
+        color: #000; /* Cambia el color del texto a negro */
+        border: 1px solid #000; /* Agrega un borde negro */
+        padding: 8px 15px; /* Ajusta el tamaño del botón */
+        border-radius: 5px; /* Bordes redondeados */
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .top-bar-actions .create-community-btn:hover {
+        background-color: #000; /* Fondo negro al pasar el mouse */
+        color: #fff; /* Texto blanco al pasar el mouse */
+    }
+}
+
+/* Ocultar el botón "Crear" en pantallas grandes */
+@media (min-width: 769px) {
+    .top-bar-actions .create-community-btn {
+        font-size: 0.9rem; /* Tamaño del texto en pantallas grandes */
+        background-color: #007bff; /* Fondo azul */
+        color: #fff; /* Texto blanco */
+        border: none; /* Sin borde */
+        padding: 10px 20px; /* Tamaño del botón */
+        border-radius: 50px; /* Bordes redondeados */
+    }
+}
+
+/* Mostrar y centrar el logo y el botón en dispositivos móviles */
+@media (max-width: 768px) {
+    .mobile-logo {
+        display: flex; /* Asegura que el contenedor sea visible */
+        flex-direction: column; /* Coloca el logo y el botón en columna */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        background-color: #000; /* Fondo negro */
+        padding: 10px 0; /* Espaciado interno */
+        position: fixed; /* Fija el contenedor en la parte superior */
+        top: 0; /* Posición en la parte superior */
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho de la pantalla */
+        z-index: 1000; /* Asegura que esté encima de otros elementos */
+    }
+
+    .mobile-logo svg {
+        width: 40px; /* Ajusta el tamaño del logo */
+        height: 40px;
+        margin-bottom: 10px; /* Espaciado entre el logo y el botón */
+    }
+
+    .mobile-logo .create-community-btn {
+        display: block; /* Asegura que el botón sea visible */
+        font-size: 0.8rem; /* Ajusta el tamaño del texto */
+        background-color: transparent; /* Fondo transparente */
+        color: #000; /* Texto negro */
+        border: 1px solid #000; /* Borde negro */
+        padding: 8px 15px; /* Espaciado interno */
+        border-radius: 5px; /* Bordes redondeados */
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+
+    .mobile-logo .create-community-btn:hover {
+        background-color: #000; /* Fondo negro al pasar el mouse */
+        color: #fff; /* Texto blanco al pasar el mouse */
+    }
+
+    /* Ajustar la barra superior para que no se superponga con el logo */
+    .top-bar {
+        margin-top: 120px; /* Deja espacio debajo del logo y el botón */
+    }
+}
+
+/* Ocultar el contenedor del logo en pantallas grandes */
+@media (min-width: 769px) {
+    .mobile-logo {
+        display: none; /* Oculta el contenedor en pantallas grandes */
+    }
+}
+
+/* Ocultar el logo por defecto en pantallas grandes */
+.mobile-logo {
+    display: none;
+}
+
+/* Mostrar y centrar el logo y el botón en dispositivos móviles */
+@media (max-width: 768px) {
+    .mobile-logo {
+        display: flex; /* Asegura que el contenedor sea visible */
+        flex-direction: column; /* Coloca el logo y el botón en columna */
+        justify-content: center; /* Centra horizontalmente */
+        align-items: center; /* Centra verticalmente */
+        background-color: #000; /* Fondo negro */
+        padding: 10px 0; /* Espaciado interno */
+        position: fixed; /* Fija el contenedor en la parte superior */
+        top: 0; /* Posición en la parte superior */
+        left: 0;
+        width: 100%; /* Ocupa todo el ancho de la pantalla */
+        z-index: 1000; /* Asegura que esté encima de otros elementos */
+    }
+
+    .mobile-logo svg {
+        width: 40px; /* Ajusta el tamaño del logo */
+        height: 40px;
+        margin-bottom: 10px; /* Espaciado entre el logo y el botón */
+    }
+
+    .mobile-logo .create-community-btn {
+        display: block; /* Asegura que el botón sea visible */
+        font-size: 0.8rem; /* Ajusta el tamaño del texto */
+        background-color: #007bff; /* Fondo azul */
+        color: #000; /* Texto negro */
+        border: none; /* Sin borde */
+        padding: 10px 20px; /* Espaciado interno */
+        border-radius: 50px; /* Hace el botón más redondo */
+        cursor: pointer;
+        transition: background-color 0.3s ease, color 0.3s ease;
+        align-self: flex-end; /* Mueve el botón hacia la derecha */
+        margin-right: 20px; /* Agrega espacio desde el borde derecho */
+    }
+
+    .mobile-logo .create-community-btn:hover {
+        background-color: #0056b3; /* Fondo azul más oscuro al pasar el mouse */
+        color: #fff; /* Texto blanco al pasar el mouse */
+    }
+
+    /* Ajustar la barra superior para que no se superponga con el logo */
+    .top-bar {
+        margin-top: 120px; /* Deja espacio debajo del logo y el botón */
+    }
+
+    /* Posicionar el SVG de la lupa en la esquina superior derecha */
+    .search-icon {
+        position: fixed; /* Fija el ícono en la pantalla */
+        top: 10px; /* Posición desde la parte superior */
+        right: 10px; /* Posición desde la parte derecha */
+        width: 20px; /* Ajusta el tamaño del ícono */
+        height: 30px;
+        z-index: 1100; /* Asegura que esté por encima de otros elementos */
+        cursor: pointer; /* Cambia el cursor al pasar sobre el ícono */
+        fill: #000000;
+        
+    }
+    
+}
+
+/* Ocultar el contenedor del logo en pantallas grandes */
+@media (min-width: 769px) {
+    .mobile-logo {
+        display: none; /* Oculta el contenedor en pantallas grandes */
+    }
+}
