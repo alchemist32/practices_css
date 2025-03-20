@@ -3,6 +3,7 @@ body {
   background-color: #001935;
   margin: 0;
   padding: 0;
+  min-height: 100vh; /* Hace que el body ocupe toda la pantalla */
   overflow-x: hidden;
 }
 
@@ -35,7 +36,7 @@ nav ul li a {
   display: flex;
   align-items: center;
   text-decoration: none;
-  color: white;
+  color: rgb(182, 180, 180);
   font-size: 16px;
   gap: 10px; /* Asegura que haya separación entre el ícono y el texto */
 }
@@ -60,33 +61,36 @@ nav li a:hover {
 header {
   background-color: #001935;
   color: white;
-  padding: 15px 20px;
+  padding-bottom: 16px;
   text-align: center;
-  width: calc(100% - 240px); 
-  position: relative; 
+  position: relative;
+  width: calc(100% - 240px); /* Hace que el header ocupe el 100% menos la barra lateral */
+  top: 0;
+  left: 240px; /* Alinea el header con el contenido que tiene un margen de 240px */
   border-bottom: 1px solid #0d243f;
   height: 60px;
   line-height: 30px;
-  margin-left: 240px;
+  z-index: 10; /* Asegura que el header esté por encima de los demás elementos */
 }
+
 
 
 
 .content {
-  position: fixed;
-  left: 0;
+  position: fixed; /* O usa relative si necesitas flujo normal */
   top: 0;
+  left: 0;
   width: 240px;
-  height: 100%;
+  height: calc(100% - 60px); /* Ajusta la altura */
   background-color: #001935;
   border-right: 1px solid #0d243f;
   display: flex;
   flex-direction: column;
-  padding-top: 60px;
-  height: 100vh;
-  overflow-y: auto;
-  z-index: 1000;
+  overflow-y:hidden;
+  z-index: 5;
 }
+
+
 
 .content__header {
   flex: 1;
@@ -95,15 +99,23 @@ header {
 }
 
 .container {
+  position:absolute; /* O relative si prefieres */
   top: 0;
-  position: fixed;
-  width: 80px;
-  height: 200px;
-  padding-top: 200px;
-  padding-left: 70px;
-  color: white;
-  overflow-x: hidden;
-  
+  left: 0;
+  width: 240px; /* Igual que .content */
+  height: calc(100% - 60px); /* Igual que .content */
+  border-right: 1px solid #0d243f;
+  margin-right: 20px;
+  background-color: #001935; /* Si necesitas el mismo fondo */
+  padding-top: 60px; /* Evita superposición con el header */
+  overflow-x:hidden; /* Permite desplazamiento si es necesario */
+  z-index: 5;
+}
+
+.logo-left{
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .header-container {
@@ -112,7 +124,6 @@ header {
   align-items: center;
   color: white;
   padding: 16px;
-  margin-right: 40px;
 }
 
 .header-title {
@@ -128,9 +139,10 @@ header {
 
 .create-community-btn {
   background-color: #00a9dd;
-  color: white;
-  padding: 5px 15px;
-  border-radius: 25px;
+  color: #0d243f;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  border-radius: 9999px;
   text-decoration: none;
   font-size: 14px;
   font-weight: bold;
@@ -140,13 +152,20 @@ header {
   justify-content: center;
 }
 
+.create-community-btn:hover{
+  background-color: #2dceff;
+}
+
 .search-container {
   display: flex;
   align-items: center;
   background-color: #0d243f;
-  padding: 5px 15px;
+  padding: 10px 16px;
+  box-sizing: border-box;
+  border-radius: 9999px;
   border-radius: 25px;
   height: 40px; 
+  position: relative; /* Hace que el icono se posicione relativo a este div */
 }
 
 .search-input {
@@ -154,95 +173,133 @@ header {
   border: none;
   font-size: 14px;
   padding: 5px 15px;
-  padding-right: 20px;
+  padding-left: 40px; /* Deja espacio para el ícono */
   color: white;
   outline: none;
+  width: 100%;
 }
-
 
 .search-input::placeholder {
   color: #aaa;
+}
+
+/* Estilos para el icono */
+.search-icon {
+  position: absolute;
+  left: 15px; /* Ajusta la posición dentro del input */
+  width: 18px;
+  height: 18px;
+  fill: white;
+}
+
+.center-container {
+  padding: 0 24px 24px;
+  margin-left: 240px; /* Se mueve a un lado de la barra lateral */
+  margin-right: 140px;
+  border-left: 1px solid #0d243f;
+  flex-grow: 1; /* Permite que el contenido principal ocupe todo el espacio disponible */
+  padding-bottom: 100px; /* Asegura un espacio para el footer */
+  margin-bottom: 70px;
+
+}
+
+.align-container {
+  grid-gap: 12px;
+  width: 100%;
+  padding-top: 24px;
+  display: grid;
 }
 
 .containerimages {
   display: grid;
   grid-template-columns: repeat(4, 1fr); /* 4 columnas */
   grid-template-rows: repeat(5, 1fr); /* 5 filas */
-  grid-column-gap: 10px;
-  grid-row-gap: 10px;
-  padding-bottom: 120px;
+  grid-column-gap: 12px;
+  grid-row-gap: 12px;
+  padding: 10px;
   position: relative;
-  padding-left: 250px;
-  padding-right: 40px;
-  padding-top: 10px;
-  margin-right: 10px;
-  margin-left: 20px;
-  top: 50px; 
   box-sizing: border-box;
 }
+
+
   
   .div1 { grid-area: 1 / 1 / 2 / 2; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div2 { grid-area: 1 / 2 / 2 / 3; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div3 { grid-area: 1 / 3 / 3 / 5; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div4 { grid-area: 2 / 1 / 3 / 2; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div5 { grid-area: 2 / 2 / 3 / 3; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div6 { grid-area: 3 / 1 / 5 / 3; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div7 { grid-area: 3 / 3 / 4 / 4; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div8 { grid-area: 3 / 4 / 4 / 5; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div9 { grid-area: 4 / 3 / 5 / 4; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div10 { grid-area: 4 / 4 / 5 / 5; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div11 { grid-area: 5 / 1 / 6 / 2; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div12 { grid-area: 5 / 2 / 6 / 3; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div13 { grid-area: 5 / 3 / 6 / 4; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
   .div14 { grid-area: 5 / 4 / 6 / 5; 
     background-color: #0d243f;
-    border-radius: 5%;
-    aspect-ratio: 1;}
+    border-radius: 8px;
+    aspect-ratio: 1;
+  border:1px solid rgba(255,255,255,0.05)}
 
     .div1 img, .div2 img, .div3 img, .div4 img, .div5 img, .div6 img, .div7 img, .div8 img, .div9 img, .div10 img, .div11 img, .div12 img, .div13 img, .div14 img {
       width: 100%; /* La imagen tomará todo el ancho del contenedor */
       height: 90%; /* La imagen tomará todo el alto del contenedor */
       object-fit: cover; /* Asegura que la imagen cubra completamente el área del div sin distorsionar */
-      border-radius: 5%; /* Mantiene el borde redondeado */
+      border-top-left-radius: 8px;
+      border-top-right-radius: 8px;
     }
 
     /* Asegura que el texto de los elementos <p> dentro de los divs sea blanco y en negrita */
@@ -251,7 +308,7 @@ header {
   font-weight: bold; /* El texto será en negrita */
   font-size: 14px;
   margin: 0; /* Elimina los márgenes predeterminados */
-  padding-left: 30px; /* Agrega un poco de espacio alrededor del texto */
+  padding: 0 12px; /* Agrega un poco de espacio alrededor del texto */
   padding-bottom: 10px;
   padding-top: 10px;
 }
@@ -260,81 +317,253 @@ header {
   background-color: #194679;
 }
 
+.footer-container{
+  width: calc(100% - 240px); /* Resta la barra lateral */
+  margin-left: 240px; /* Alinea con el contenido */
+  background-color: #001935;
+  padding: 20px 24px;
+  display: flex;
+  justify-content: flex-start;
+  position: relative;
+  margin-bottom: 150px; /* Agrega margen para que el rec-log no lo tape */
+
+}
 
 footer {
-  justify-content: start;
-  color: white;
-  padding: 15px 0;
-  padding-left: 0px;
-  position: relative;
-  width: auto;
-  bottom: 0;
-  margin-top: 20px; 
-  margin-left: 240px;
-}
-
-footer ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
+  flex-wrap: wrap;
+  font-size: .78125rem;
+  font-weight: 400;
+  line-height: 1.52;
   display: flex;
 }
+
 
 footer a {
   color: white;
   text-decoration: none;
   font-size: 12px;
+  padding-left: 6px;
+  padding-right: 6px;
 }
 
 footer a:hover {
   text-decoration: underline;
 }
 
+.rec-log {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%; /* Ahora ocupa todo el ancho */
+  background-color: rgba(0, 25, 53, 0.9); /* Ajusta la opacidad si es necesario */
+  border-radius: 0; /* Sin bordes redondeados */
+  z-index: 100;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
 
-@media screen and (max-width: 357px) {
-  body {
+.rec-log-content {
+  display: flex;
+  flex-direction: column; /* Asegura que los elementos estén en columna */
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  max-width: 960px;
+  text-align: center;
+  gap: 16px; /* Agrega espacio entre el texto y los botones */
+  
+}
+
+.rec-text{
+  flex: none;
+  align-self: center;
+  margin: 0;
+  font-size: 1rem;
+  font-weight: 400;
+  line-height: 1.5;
+}
+
+.content-botones {
+  display: flex;
+  flex-direction: row; /* Los botones estarán en fila */
+  justify-content: center;
+  gap: 16px;
+  width: 100%;
+}
+
+.boton1{
+  background-color: black;
+  color: white;
+  width: 100%;
+  font-size: .875rem;
+  padding: 10px 16px;
+  font-weight: 500;
+  line-height: 1.25rem;
+  box-sizing: border-box;
+  border-radius: 9999px;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  width: fit-content;
+  text-decoration: none;
+  display: inline-flex;
+}
+
+.boton2{
+  color:white;
+  background-color: rgba(0,0,0,0.1);
+  width: 100%;
+  font-size: .875rem;
+  padding: 10px 16px;
+  font-weight: 500;
+  line-height: 1.25rem;
+  box-sizing: border-box;
+  border-radius: 9999px;
+  outline: none;
+  justify-content: center;
+  align-items: center;
+  width: -webkit-fit-content;
+  width: -moz-fit-content;
+  width: fit-content;
+  text-decoration: none;
+  display: inline-flex;
+}
+
+.boton1, .boton2 {
+  border: none; /* Quita el borde */
+  width: 100%; /* Hace que ocupen todo el ancho disponible */
+  max-width: 455px; /* Ajusta el ancho máximo */
+  padding: 12px 24px; /* Hace que los botones sean más grandes */
+  font-size: 1rem; /* Aumenta el tamaño del texto */
+  text-align: center;
+}
+
+.boton1:hover{
+  background-color: rgb(34, 34, 34);
+}
+ 
+.boton2:hover{
+  background-color: rgba(0,0,0,0.3);
+}
+
+.text-boton{
+  text-overflow: ellipsis;
+  text-align: center;
+  overflow: hidden;
+}
+
+@media (max-width: 375px) {
+  /* Oculta la barra lateral y todo lo que está dentro de .container */
+  .container,
+  .content,
+  .content__header {
+    visibility: hidden;
+  }
+
+  /* Ajusta el header para que ocupe todo el ancho disponible */
+  header {
+    width: 100%; /* El header ocupa todo el ancho */
+    left: 0; /* Alineado a la izquierda */
+    text-align: center; /* Centra el contenido */
+    position: relative;
+    padding: 8px 12px; /* Ajusta el padding */
+    display: flex;
+    flex-direction: column; /* Asegura que haya dos líneas */
+    gap: 8px; /* Espacio entre las dos líneas */
+    overflow: hidden;
+  }
+
+  /* Primer línea: menú, logo y lupa */
+  .header-line-one {
+    display: flex;
+    justify-content: space-between; /* Distribuye los íconos en los extremos y el logo en el centro */
+    align-items: center;
+    width: 100%;
+    overflow: hidden;
+  }
+
+  .header-line-one .menu-icon,
+  .header-line-one .search-icon {
+    width: 18px; /* Reducido el tamaño */
+    height: 18px; /* Reducido el tamaño */
+    fill: white;
+  }
+
+  .logo-left {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px; /* Ajusta el tamaño del logo */
+  }
+
+  .header-line-two {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+  }
+
+  .header-title {
+    font-size: 16px; /* Reducido el tamaño de fuente */
+    font-weight: bold;
+    text-align: center; /* Asegura que el título esté centrado */
+    width: 100%;
+  }
+
+  .create-community-btn {
+    background-color: #00a9dd;
+    color: #0d243f;
+    padding: 8px 12px; /* Ajusta el padding */
+    border-radius: 9999px;
+    text-decoration: none;
+    font-size: 14px; /* Tamaño de fuente ajustado */
+    font-weight: bold;
+    height: 36px; /* Reducido el tamaño */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    text-align: center;
+  }
+
+  /* Ajusta el centro del contenido */
+  .center-container {
+    margin-left: 0; /* Elimina el margen izquierdo */
+    margin-right: 0; /* Elimina el margen derecho */
+    border-left: none; /* Elimina el borde izquierdo */
+    padding: 0 12px; /* Ajusta el padding */
     overflow-x: hidden;
   }
 
-  .content {
-    width: 100%;
-    position: fixed;
-    top: 0;
-    left: 0;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    background-color: #001935;
-    padding: 10px;
-    border-bottom: 1px solid #0d243f;
-  }
-
-  .containerimages {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr); /* 2 columnas */
-    grid-template-rows: repeat(13, auto); /* 13 filas */
-    padding: 10px;
-    margin: 0;
-    gap: 5px;
-    margin-top: 10px;
-  }
-
-  .containerimages div {
-    border-radius: 8px;
-  }
-
-  .div1, .div2, .div3, .div4, .div5, .div6, .div7, .div8, .div9, .div10, .div11, .div12, .div13 {
-    background-color: #0d243f;
-    aspect-ratio: 1;
-  }
-
-  .div1 img, .div2 img, .div3 img, .div4 img, .div5 img, .div6 img, .div7 img, .div8 img, .div9 img, .div10 img, .div11 img, .div12 img, .div13 img {
-    height: 100%;
-  }
-
-  footer {
-    width: 100%;
+  /* Ajusta el footer */
+  .footer-container {
+    width: 100%; /* El footer ocupa todo el ancho */
+    margin-left: 0; /* Alineado a la izquierda */
     text-align: center;
-    padding: 10px;
+    justify-content: center;
+  }
+
+  /* Ajusta el rec-log */
+  .rec-log {
+    width: 100%;
+    left: 0;
+    padding: 8px; /* Reduce el padding */
+  }
+
+  .rec-log-content {
+    max-width: 100%;
+    padding: 0 8px; /* Ajusta el espacio interno */
+  }
+
+  .content-botones {
+    flex-direction: column; /* Los botones se apilan en vertical */
+    gap: 6px; /* Reduce el espacio entre ellos */
+  }
+
+  .boton1, .boton2 {
+    width: 100%; /* Los botones se expanden a todo el ancho */
   }
 }
+
