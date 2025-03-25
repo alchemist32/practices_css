@@ -172,6 +172,32 @@ body {
     z-index: 40;
 }
 
+.ojo:hover{
+    opacity: 0;
+}
+
+.ojo2{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: black;
+    position:absolute;
+    left: 50px;
+    top: 112px;
+    z-index: 39;
+}
+
+.ojo2::before{
+    content:"";
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: #ffb787;
+    position: absolute;
+    box-shadow: 0px 8px 0 0 black;
+
+}
+
 .scarojo{
     width: 100px;
     height: 100px;
