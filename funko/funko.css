@@ -1,0 +1,320 @@
+* {
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-image: url(https://static.wikia.nocookie.net/onepiece/images/e/e7/Marineford.png/revision/latest?cb=20170402150931&path-prefix=es);
+    background-size: cover; /* Hace que la imagen cubra toda la pantalla */
+    background-position: center; /* Centra la imagen en el fondo */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 100vh; /* Asegura que el fondo cubra toda la altura de la ventana */
+}
+
+.funko {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra horizontalmente */
+    margin: 80px auto;  /* Centra el contenedor en la página */
+    position: relative;
+    width: max-content;
+}
+
+.sombrero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.copa {
+    width: 450px;
+    height: 200px;
+    border-radius: 50% 50% 0% 0% / 100% 100% 0% 0%;
+    background-color: #ffc965;
+    background: linear-gradient(to top, #b88e41, #ffc965);
+    position: relative;
+    overflow: hidden;
+    z-index: 10;
+}
+
+.copa::before{
+    content: "";
+    position:absolute;
+    bottom: 0;
+    background-color: rgb(168, 0, 0);
+    width: 450px;
+    height: 80px;
+    border-radius: 50% 50% 0% 0%;
+}
+
+.falda {
+    width: 600px;
+    height: 150px;
+    border-radius: 50%;
+    background-color: #b88e41;
+    background: linear-gradient(to top, #b88e41, #ffc965);
+    position: absolute;
+    top: 150px; /* Ajusta para que quede sobre .copa */
+    z-index: 20; /* Asegura que esté encima de .copa pero debajo de .cabezaF */
+}
+
+.cabezaF {
+    width: 450px;
+    height: 320px;
+    border-radius: 25%;
+    background-color: #ffb787;
+    position: relative;
+    z-index: 30; /* Asegura que esté encima de todo */
+}
+
+.ojo{
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    background-color: black;
+    position:absolute;
+    left: 50px;
+    top: 120px;
+    box-shadow: 260px 0;
+}
+
+.nariz{
+    width: 0;
+    height: 0;
+    border-left: 20px solid transparent;
+    border-right: 20px solid transparent;
+    border-bottom: 50px solid #eb945a;
+    position: absolute;
+    left: 50%;  /* Centra horizontalmente */
+    top: 60%;   /* Ajusta la posición vertical */
+    transform: translateX(-50%); /* Corrige el centrado exacto */
+}
+
+.cuerpoF {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    width: 200px;
+    height: 600px;
+    position: relative;
+}
+
+.torzo {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los brazos dentro del torso */
+    width: 200px;
+    height: 200px;
+    background-color: #d88c59; /* Color del torso */
+    background: linear-gradient(to bottom, #d88c59 20%, #ffb787 80%);;
+    border-radius: 15px;
+    position: relative;
+}
+
+.torzo::before{
+    content: "";
+    position:absolute;
+    bottom: 0;
+    background-color: #ffbd41;
+    width: 200px;
+    height: 60px;
+}
+
+.cont_camisa{
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Centra los brazos dentro del torso */
+    width: 200px;
+    height: 200px;
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+}
+
+.camisa_izq{
+    position:absolute;
+    left: 0;
+    background-color: #a51914;
+    width: 50px;
+    height: 200px;
+    border-radius: 0% 100% 100% 0% / 0% 30% 70% 100%;
+}
+
+.camisa_der{
+    position:absolute;
+    right: 0;
+    background-color: #a51914;
+    width: 50px;
+    height: 200px;
+    border-radius: 100% 0% 0% 100% / 30% 100% 0% 70%;
+}
+
+.banda{
+    background-color: #ffbd41;
+    width: 60px;
+    height: 100px;
+    border-radius: 0px 0px 15px 15px; 
+    position:absolute;
+    right:0;
+    top:0;
+}
+
+.banda, .banda2 {
+    background-color: #ffbd41;
+    width: 60px;
+    height: 100px;
+    border-radius: 0px 0px 15px 15px; 
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.banda2 {
+    top: 70px; /* Ajusta esta propiedad para que quede justo debajo de .banda */
+    right: -10px;
+    border-radius: 15px;
+    transform: rotate(-20deg); /* Aplica la inclinación de -15 grados */
+
+}
+
+
+.scar {
+    position: absolute; /* Usa posición absoluta para centrar */
+    background-color: #a05666;
+    width: 60px;
+    height: 60px;
+    border-radius: 0% 100% 0% 100% / 0% 100% 0% 100%;
+    top: 40%;  /* Coloca el scar en el centro del torso */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -40%); /* Ajusta el centro exacto */
+}
+
+.scar2{
+    position: absolute; /* Usa posición absoluta para centrar */
+    background-color: #a05666;
+    width: 60px;
+    height: 60px;
+    border-radius: 100% 0% 100% 0% / 100% 0% 100% 0%;
+    top: 40%;  /* Coloca el scar en el centro del torso */
+    left: 50%; /* Centra horizontalmente */
+    transform: translate(-50%, -40%); /* Ajusta el centro exacto */
+}
+
+.brazo_izq, .brazo_der {
+    width: 50px;
+    height: 150px;
+    background-color: #a51914; /* Color de los brazos */
+    border-radius: 20px;
+    position: absolute;
+    top: 0%; /* Coloca los brazos alineados al torso */
+}
+
+.brazo_izq {
+    left: -55px; /* Desplaza el brazo izquierdo hacia la izquierda */
+    transform: rotate(35deg);
+}
+
+.brazo_der {
+    right: -55px; /* Desplaza el brazo derecho hacia la derecha */
+    transform: rotate(-35deg);
+}
+
+.antebrazo_izq, .antebrazo_der {
+    width: 50px;
+    height: 150px;
+    background-color: #ffb787; /* Color de los brazos */
+    border-radius: 20px;
+    position: absolute;
+    top: 50%; /* Coloca los brazos alineados al torso */
+    overflow: hidden;
+}
+
+.antebrazo_izq {
+    left: -90px; /* Desplaza el brazo izquierdo hacia la izquierda */
+}
+
+.antebrazo_der {
+    right: -90px; /* Desplaza el brazo derecho hacia la derecha */
+}
+
+.manga{
+    position:absolute;
+    width: 50px;
+    height: 75px;
+    background-color: #a51914;
+    top: 0;
+}
+
+.piernas {
+    width: 200px;
+    height: 200px;
+    position: relative; /* Esto es necesario para que los elementos absolutos se posicionen dentro de .piernas */
+}
+
+.pantalon {
+    width: 200px;
+    height: 80px;
+    background-color: #0067dd;
+}
+
+.pierna_izq, .pierna_der { 
+    width: 70px;
+    height: 150px;
+    background-color: #ffb787; 
+    border-radius: 20px;
+    position: absolute;
+    bottom: 0; /* Coloca las piernas en la parte inferior */
+}
+
+.pierna_izq {
+    left: 0; /* Coloca la pierna izquierda al borde izquierdo */
+}
+
+.pierna_der {
+    right: 0; /* Coloca la pierna derecha al borde derecho */
+}
+
+.pant{
+    position:absolute;
+    width: 70px;
+    height: 75px;
+    background-color: #0067dd;
+    top: 0;
+    border-radius: 0 0 15% 15%;
+}
+
+.pant::before{
+    content: "";
+    position:absolute;
+    width: 70px;
+    height: 25px;
+    background-color: #cacaca;
+    border-radius: 15%;
+    bottom: 0;
+}
+
+
+.pies {
+    width: 250px;
+    height: 60px;
+    position: relative;
+}
+
+.pie_izq, .pie_der{
+    width: 90px;
+    height: 60px;
+    background-color: #ffb787; 
+    border-radius: 20px;
+    position: absolute;
+}
+
+.pie_izq {
+    left: 0; /* Coloca la pierna izquierda al borde izquierdo */
+}
+
+.pie_der {
+    right: 0; /* Coloca la pierna derecha al borde derecho */
+}
+
