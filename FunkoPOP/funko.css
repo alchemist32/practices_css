@@ -228,6 +228,31 @@ body {
     border-color: #fff transparent transparent transparent;
 }
 
+.hands {
+    position: absolute;
+    top: 250px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-between;
+    width: 300px; /* Ajusta la separación */
+}
+
+.hand {
+    width: 60px;
+    height: 90px;
+    background-color: #222021;
+    clip-path: polygon(
+        10% 10%, 30% 0%, 50% 10%, 70% 0%, 90% 10%, /* Parte superior y dedos */
+        85% 35%, 75% 50%, 85% 60%, 80% 100%, /* Lado derecho */
+        20% 100%, 15% 60%, 25% 50%, 15% 35% /* Lado izquierdo */
+    );
+}
+
+/* Reflejar la mano izquierda */
+.hand-left {
+    transform: scaleX(-1);
+}
 /* Animaciones */
 @keyframes popIn {
     from {
