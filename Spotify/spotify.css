@@ -1,0 +1,99 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+html, body{
+    width: 1280px;
+    height: 720px;
+}
+
+.body-container{
+    overscroll-behavior-y: none;
+}
+
+#main{
+    height: 100%;
+    width: 100%;
+    isolation: isolate;
+    z-index: 0;
+    position: relative;
+}
+
+.principal-container{
+    background-color: #000;
+    display: grid;
+    gap: 8px;
+    grid-template-areas: 
+    "global-nav     global-nav      global-nav"
+    "left-sidebar   main-view       right-sidebar"
+    "now-playing-bar now-playing-bar now-playing-bar";
+    grid-template-columns: auto 1fr;
+    grid-template-rows: 1fr auto 1fr;
+    height: 100%;
+    min-height: 100%;
+    padding: 8px;
+    position: relative;
+    width: 100%;
+}
+
+.nav-top{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    grid-area: global-nav;
+    background-color: #000;
+    height: calc(48px + 8px*2);
+    justify-content: space-between;
+    margin: calc(8px*-1);
+    padding: 8px;
+    position: relative;
+}
+
+.logo-container{
+    display: flex;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -webkit-box-align: center;
+    align-items: center;
+    flex-flow: row nowrap;
+    gap: 8px;
+    z-index: 1;
+}
+
+.logo{
+    flex-direction: row;
+    margin: 20px;
+    height: 32px;
+    width: 32px;
+}
+
+.container-bar {
+    width: 507.81px;
+    height: 48px;
+    display: flex;
+    justify-content: flex-start;
+    flex: 1;
+}
+
+.bar-int{
+    min-width: auto;
+    width: 100%;
+    max-width: 546px;
+    display: flex;
+    align-items: center;
+
+}
+
+.boton-inicio {
+    width: 48px;  /* Ajusta el tamaño según sea necesario */
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: none;  /* Si hay estilos de fondo que interfieren */
+    border: none; /* Quita los bordes si es necesario */
+    cursor: pointer;
+    background-color: #1f1f1f;
+    border-radius: 50%;
+}
