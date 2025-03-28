@@ -14,7 +14,6 @@ html, body {
 .body-container {
     width: 100%;
     height: 100%;
-    overscroll-behavior-y: none;
 }
 
 #main {
@@ -102,6 +101,10 @@ html, body {
     margin-left: 8px;
 }
 
+.boton-inicio:hover{
+    background-color: #292929;
+}
+
 .search-contain{
     width: 451.81px;
     height: 48px;
@@ -120,6 +123,14 @@ html, body {
     border-radius: 500px;
     padding-inline: 8px;
 }
+
+.search-bar:hover{
+    background-color: #292929;
+    .search-input{
+        background-color: #292929;
+    }
+}
+
 .search-bar svg {
     width: 24px;
     height: 48px;
@@ -128,9 +139,8 @@ html, body {
 .search-icon{
     display: flex;
     position: relative;
-    width: 48px;
-    height: 48px;
     justify-content: center;
+    padding: 0 12px;
 }
 
 .icon1 {
@@ -168,6 +178,7 @@ html, body {
 }
 
 .flex-cont{
+    justify-content: center;
     display: flex;
     gap: 8px;
 }
@@ -182,6 +193,10 @@ html, body {
     cursor: pointer;
     align-items: center;
     justify-content: center;
+}
+
+.boton-nav:hover{
+    color: #fff;
 }
 
 .reg{
@@ -212,9 +227,14 @@ html, body {
 .big-boton{
     background-color: #fff;
     font-size: 16px;
+    font-weight: bold;
     padding: 8px 32px;
     cursor: pointer;
     border-radius: 9999px;
+}
+
+.big-boton:hover{
+    border: #fff;
 }
 
 .left-bar{
@@ -471,7 +491,6 @@ html, body {
 }
 
 .mitad-inferior{
-    height: 237px;
     overflow: hidden;
 }
 
@@ -901,6 +920,10 @@ html, body {
     visibility: visible;
 }
 
+.container-boton-rep:hover{
+    background-color: #89f0ad;
+}
+
 .play-boton{
     align-self: center;
     min-inline-size: 0;
@@ -927,6 +950,10 @@ html, body {
     position: relative;
     block-size: 48px;
     inline-size: 48px;
+}
+
+.boton-verde:hover{
+    background-color: #89f0ad;
 }
 
 .flecha{
@@ -1040,7 +1067,7 @@ html, body {
     display: flex;
     flex-flow: column wrap;
     align-items: flex-start;
-    max-width: 620px;
+    max-width: 680px;
     
 }
 
@@ -1106,11 +1133,12 @@ html, body {
 
 .redes-sociales-cont{
     margin-bottom: 40px;
+ 
 }
 
 .sm-item{
     display: inline;
-    padding-right: 16px;
+    padding-right: 15px;
 }
 
 .social-a{
@@ -1223,12 +1251,16 @@ html, body {
         height: 667px;
     }
 
+    .barra-estatica-inferior{
+        display: none;
+    }
+
     .mitad-superior{
         display: none;
     }
 
     .nav-top{
-        width: 100%;
+        width: 375px;
         height: 54px;
     }
 
@@ -1246,20 +1278,55 @@ html, body {
     }
 
     .principal-container {
+        background-color: #121212;
         grid-template-areas:
             "global-nav"
             "main-view"
             "left-sidebar"
-            "now-playing-bar"; /* Cambiar el layout para móviles */
+            "now-playing-bar"; /* main-view y left-sidebar estarán uno debajo del otro */
         grid-template-columns: 1fr; /* Solo una columna */
-        grid-template-rows: auto 1fr auto auto; /* Asegura que haya espacio para cada sección */
-    }
-
-    .main-container-one{
-        overflow-y: hidden;
+        grid-template-rows: auto 1fr 1fr auto; /* Ajuste el tamaño de las filas */
     }
 
     .contain-section{
+        display: flex;
+        overflow-x: scroll;
+        scroll-snap-type: x mandatory;
+    }
+
+    .contain-song-item{
+        width: 152px;
+        height: 152px;
+       /*  min-width: 100%; Cada item ocupa todo el ancho del contenedor */
+        scroll-snap-align: start; /* Los items se alinearán al inicio del contenedor */
+    }
+
+    .footer-main-center{
+        max-width: 375px;
+    }
+
+    .imagen-place2{
+        --card-color: #A03000;
+        border-radius: 6px;
+        padding-bottom: 100%;
+        position: relative;
+        width: 100%;
+    }
+
+    .imagen-item2{
+        border-radius: 6px;
+        display: block;
+        height: 100%;
+        left: 0;
+        position: absolute;
+        top: 0;
+        width: 100%;
+    }
+
+    .botones-log{
+        width: 125.97px;
+        height: 32;
     }
 
 }
+
