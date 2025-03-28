@@ -1,0 +1,92 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #000;
+    text-align: center;
+}
+
+.full-width-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    max-width: 1200px;
+}
+
+.small, .medium, .evo {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+
+.pichu img, .charmander img, .squirtle img, .bulbasaur img, .abra img,
+.pikachu img, .charmileon img, .wartortle img, .ivysour img, .kadabra img,
+.raichu img, .charizard img, .blastoise img, .venusaur img, .alakazam img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
+
+.medium, .evo {
+    display: none;
+}
+
+.pichu { background-color: #ffee99; width: 100%;}
+.charmander { background-color: #ffcc99; width: 100%;}
+.squirtle { background-color: #99ddff; width: 100%;}
+.bulbasaur { background-color: #b3ffb3; width: 100%;}
+.abra { background-color: #ffddaa; width: 100%;}
+
+
+@media (min-width: 768px) {
+    .small {
+        display: none;
+    }
+
+    .medium {
+        display: flex;
+    }
+
+    .pikachu { background-color: #ffbb33; width: 100%;}
+    .charmileon { background-color: #ff9966; width: 100%;}
+    .wartortle { background-color: #3399cc; width: 100%;}
+    .ivysour { background-color: #66cc66; width: 100%;}
+    .kadabra { background-color: #ff884d; width: 100%;}
+}
+
+@media (min-width: 992px) {
+    .medium {
+        display: none;
+    }
+
+    .evo {
+        display: flex;
+    }
+
+    .raichu { background-color: #ff8800; width: 100%;}
+    .charizard { background-color: #cc3300; width: 100%;}
+    .blastoise { background-color: #003366; width: 100%;}
+    .venusaur { background-color: #225522; width: 100%;}
+    .alakazam { background-color: #aa6622; width: 100%;}
+}
