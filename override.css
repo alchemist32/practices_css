@@ -1,0 +1,17 @@
+h1, h2 {
+  background-color: white;
+  color: #6d486d;
+text-align: center;
+}
+h1{
+  color:#0c2214 !important;
+}
+
+body{
+    background-color: #6d486d;
+    
+}
+
+.navigation a{
+    color: #ebfff2;
+}

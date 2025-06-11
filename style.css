@@ -1,0 +1,96 @@
+/* Element selectors */
+body {
+  text-align: center;
+  background-color: #eae1e5;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #391739;
+}
+h1 {
+  color: #ebfff2 !important;
+}
+
+/* Títulos */
+h1, h2 {
+  background-color: #391739;
+  border-radius: 1rem; 
+  color: white;
+  text-align: center;
+}
+
+h2 {
+  margin: 0 auto;
+  width: 80%; 
+  font-size: 2rem;
+}
+
+/* Class selectors */
+.site-tittle {
+  font-size: 2.4rem; 
+}
+.navigation{
+  margin-bottom: 2rem;/*Es decir 2 veces el tamaño de raiz que es 16px en este caso*/
+}
+
+/* Enlaces en navbar */
+.navigation a {
+  display: grid;
+  color: #611b3a;
+}
+
+#about .intro {
+  font-style: italic;
+  color: #391739;
+}
+
+/* ID selectors */
+#main-header {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+#about {
+  background-color: #ffeef5;
+  margin: 0 auto;
+  width: 60%; 
+  border-radius: 1.25rem;
+  padding: 1rem;
+}
+
+#skills,
+#contact {
+  background-color: #ffe8f1;
+  flex: 1;
+  padding: 1rem;
+  border: 1px solid #fff;
+  border-radius: 2rem;
+}
+
+/* Contenedor de skills y contacto en línea */
+#skills-contact {
+  display: flex;
+  flex-wrap: wrap; 
+  gap: 1rem; 
+  width: 80%;
+  margin: 2rem auto;
+}
+
+
+/*RETO DE ESPECIFIDAD*/
+/*ESPECIFIDAD: 
+ID Selector:     1-0-0
+Class Selector:  0-1-0
+Type Selector:   0-0-1
+*/
+.special{
+  color: red;
+}
+/*class: 0-1-0*/
+
+.skill-item.special{
+color: blue;
+}
+/*class: 0-2-0*/
+
+#skills .special{
+  color: #2d4636;
+}
+/*ID y class: 1-1-0*/
