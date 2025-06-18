@@ -1,0 +1,409 @@
+/*Ajustes principales de la ventana*/
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/*Configuraciones para el background, y su vobertura*/
+
+body {
+  min-height: 100vh;
+  width: 100vw;
+  background-image: url("./material/china_bg.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+}
+/*Seccion para la cabeza de mulan y hacerla responsiva*/
+
+.mulan__head {
+  width: 60vw;
+  max-width: 350px;
+  min-width: 220px;
+  aspect-ratio: 1.3/1;
+  margin: 10vh auto 0 auto;
+  position: relative;
+  display: block;
+}
+/*Cabello de mulan*/
+
+.head__hair {
+  width: 100%;
+  height: 90%;
+  background-color: black;
+  position: absolute;
+  z-index: 1;
+  border-radius: 30% 30% 0% 0%;
+  left: 0;
+  top: 8%;
+}
+/*Estructura base para la cara*/
+
+.head__base {
+  width: 80%;
+  height: 75%;
+  background-color: #d0b485;
+  border-radius: 20%;
+  position: absolute;
+  z-index: 2;
+  left: 9.5%;
+  top: 18%;
+}
+/*mechon de cabello del lado izquierdo*/
+
+.head__hair--left {
+  border-radius: 0% 100% 100% 0% / 91% 0% 100% 9%;
+  background-color: black;
+  position: absolute;
+  width: 47%;
+  height: 25%;
+  z-index: 3;
+  left: 8%;
+  top: 15%;
+}
+/*mechon de cabello del lado derecho*/
+
+.head__hair--right {
+  border-radius: 0% 100% 0% 100% / 0% 0% 100% 100%;
+  background-color: black;
+  position: absolute;
+  width: 47%;
+  height: 25%;
+  z-index: 3;
+  right: 8%;
+  top: 15%;
+}
+/*mechon de cabello del medio*/
+
+.head__hair--lock {
+  border-radius: 100% 0% 100% 0% / 100% 0% 100% 0%;
+  background-color: black;
+  position: absolute;
+  width: 7%;
+  height: 35%;
+  z-index: 3;
+  left: 43%;
+  top: 15%;
+  transform: rotate(20deg);
+}
+/*Estilos para el ojo izquierdo y derecho y sus brillos*/
+
+.eye__left {
+  border-radius: 100%;
+  width: 20%;
+  height: 20%;
+  background-color: black;
+  position: absolute;
+  left: 15%;
+  top: 48%;
+  z-index: 3;
+  animation: blink 3s infinite;
+  transform-origin: center 60%;
+}
+.eye__right {
+  border-radius: 100%;
+  width: 20%;
+  height: 20%;
+  background-color: black;
+  position: absolute;
+  right: 15%;
+  top: 48%;
+  z-index: 3;
+  animation: blink 3s infinite;
+  transform-origin: center 60%;
+}
+
+.eye__left--light {
+  border-radius: 100%;
+  width: 25%;
+  height: 25%;
+  background-color: white;
+  position: absolute;
+  left: 60%;
+  top: 25%;
+  z-index: 3;
+  transition: transform 0.3s;
+}
+.eye__right--light {
+  border-radius: 100%;
+  width: 25%;
+  height: 25%;
+  background-color: white;
+  position: absolute;
+  right: 18%;
+  top: 25%;
+  z-index: 3;
+  transition: transform 0.3s;
+}
+
+/*Nariz del funko*/
+
+.nose {
+  position: absolute;
+  left: 50%;
+  top: 65%;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 1vw solid transparent;
+  border-right: 1vw solid transparent;
+  border-bottom: 2vw solid #c0a777;
+  z-index: 7;
+}
+
+/*Movimiento de los brillos de los ojos al hacer hover en la cabeza*/
+.mulan__head:hover .eye__light {
+  transform: translate(40%, 40%);
+}
+
+/*Espacio para el cuerpo de mulan*/
+.mulan__body {
+  width: 25vw;
+  max-width: 300px;
+  min-width: 220px;
+  aspect-ratio: 1/1;
+  margin: -2vh auto 0 auto;
+  position: relative;
+  display: block;
+}
+/*base del torso*/
+.body__top--base {
+  position: relative;
+  z-index: 5;
+  width: 40%;
+  height: 25%;
+  top: -2%;
+  left: 30%;
+  border-bottom-left-radius: 20%;
+  border-bottom-right-radius: 20%;
+  background-color: #d0b485;
+  animation: breathe 4s ease-in-out infinite;
+  transform-origin: center bottom;
+}
+/*Estilo ropa superior izquierda y derecha*/
+.top__wear--leftblue {
+  width: 35%;
+  height: 100%;
+  background-color: #373f4d;
+  border-radius: 0% 100% 73% 27% / 81% 100% 0% 19%;
+  position: absolute;
+  border-right: white solid 1px;
+  z-index: 6;
+  left: 0;
+  top: 0;
+}
+
+.top__wear--leftred {
+  width: 50%;
+  height: 100%;
+  background-color: #712f26;
+  border-radius: 0% 100% 73% 27% / 81% 100% 0% 19%;
+  position: absolute;
+
+  z-index: 5;
+
+  left: 0;
+
+  top: 0;
+}
+
+.top__wear--rightblue {
+  width: 35%;
+  height: 100%;
+  background-color: #373f4d;
+  border-radius: 100% 0% 39% 61% / 100% 79% 21% 0%;
+  position: absolute;
+  border-left: white solid 1px;
+  z-index: 6;
+  right: 0;
+  top: 0;
+}
+
+.top__wear--rightred {
+  width: 50%;
+  height: 100%;
+  background-color: #712f26;
+  border-radius: 100% 0% 39% 61% / 100% 79% 21% 0%;
+  position: absolute;
+
+  z-index: 5;
+
+  right: 0;
+
+  top: 0%;
+}
+/*Parte media del cuerpo con el cinto*/
+.body__middle {
+  position: relative;
+  z-index: 6;
+  width: 40%;
+  height: 8%;
+  top: -5%;
+  left: 30%;
+  background-color: #712f26;
+}
+
+/*Espacio base para la parte inferior del funko*/
+.body__bottom--base {
+  position: relative;
+  z-index: 5;
+  width: 60%;
+  height: 60%;
+  top: -5%;
+  left: 20%;
+}
+/*Secciones de las faldas y posicionamientos*/
+.top__skirt {
+  position: absolute;
+  z-index: 5;
+  border-radius: 26% 26% 5% 84% / 76% 85% 10% 24%;
+  width: 100%;
+  height: 80%;
+  top: -5%;
+  left: 0;
+  background-color: #373f4d;
+}
+.bottom__skirt {
+  position: absolute;
+  z-index: 4;
+  border-radius: 26% 26% 5% 84% / 76% 85% 10% 24%;
+  width: 100%;
+  height: 100%;
+  top: 0%;
+  left: 0;
+  background-color: white;
+}
+/*Cinto colgando hasta la parte superior*/
+.large__belt {
+  position: absolute;
+  z-index: 6;
+  background-color: #712f26;
+  border-radius: 52% 26% 12% 84% / 85% 100% 10% 21%;
+  width: 10%;
+  height: 85%;
+  left: 65%;
+  top: -10px;
+}
+/*Zapatos izquierdo y derecho*/
+.left__shoe {
+  position: absolute;
+  z-index: 3;
+  width: 20%;
+  height: 20%;
+  background-color: black;
+  border-radius: 64% 15% 23% 41% / 100% 100% 28% 21%;
+  top: 82%;
+  left: 10%;
+}
+
+.right__shoe {
+  position: absolute;
+  z-index: 3;
+  width: 20%;
+  height: 20%;
+  background-color: black;
+  border-radius: 64% 15% 23% 41% / 100% 100% 28% 21%;
+  top: 82%;
+  right: 10%;
+}
+/*Brazos izquierdo y derecho, y manos*/
+.left__arm--top {
+  background-color: #689aac;
+  width: 20%;
+  height: 90%;
+  position: absolute;
+  z-index: 4;
+  left: -15%;
+  border-radius: 53% 41% 23% 28% / 67% 85% 46% 39%;
+  top: 0%;
+}
+.right__arm--top {
+  background-color: #689aac;
+  width: 20%;
+  height: 90%;
+  position: absolute;
+  z-index: 4;
+  right: -15%;
+  border-radius: 53% 41% 23% 28% / 67% 85% 46% 39%;
+  top: 0%;
+}
+
+.right__arm--bottom {
+  border-radius: 73% 24% 40% 18% / 70% 67% 50% 42%;
+  background-color: #689aac;
+  width: 20%;
+  height: 10%;
+  position: absolute;
+  z-index: 7;
+  right: 25%;
+  top: 15%;
+}
+
+.right__arm--hand {
+  border-radius: 32% 37% 36% 18% / 65% 67% 60% 61%;
+  background-color: #d0b485;
+  width: 10%;
+  height: 10%;
+  position: absolute;
+  z-index: 7;
+  right: 40%;
+  top: 16%;
+}
+
+.left__arm--bottom {
+  border-radius: 30% 74% 26% 39% / 65% 66% 61% 61%;
+  background-color: #689aac;
+  width: 20%;
+  height: 10%;
+  position: absolute;
+  z-index: 7;
+  left: 25%;
+  top: 15%;
+}
+
+.left__arm--hand {
+  border-radius: 41% 26% 30% 34% / 65% 74% 61% 61%;
+  background-color: #d0b485;
+  width: 10%;
+  height: 10%;
+  position: absolute;
+  z-index: 7;
+  left: 40%;
+  top: 16%;
+}
+
+/*Animaciones para el parpadeo y simular la respiracion*/
+@keyframes blink {
+  0%,
+  90%,
+  100% {
+    height: 20%;
+  }
+  91%,
+  95% {
+    height: 2%;
+  }
+}
+@keyframes breathe {
+  0%,
+  100% {
+    transform: scaleY(1);
+  }
+  50% {
+    transform: scaleY(1.05);
+  }
+}
+
+/*Manejo de proporciones responsivas de las partes del cuerpo*/
+@media (max-width: 600px) {
+  .mulan__head {
+    width: 90vw;
+    min-width: 110px;
+  }
+  .mulan__body {
+    width: 60vw;
+    min-width: 70px;
+  }
+}
