@@ -1,0 +1,156 @@
+:root{
+    --font-family: 'Inter', sans-serif;
+}
+body{
+    background-color: white;
+    font-size: 20px;
+    margin: 0;
+    
+}
+
+
+header{
+        display: grid;
+grid-template-columns: 1fr 3fr ;
+grid-template-rows: 1fr;
+align-items: center;
+grid-template-areas:  "title text ";
+border-bottom: 2px solid black;
+font-family: var(--font-family);
+
+}
+
+header p {
+  grid-area: text;
+  background-color: red;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  font-size: 1.1em;
+  color: white;
+  padding-left: 30px;
+}
+
+
+header h1 {
+  grid-area: title;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-weight: bold;
+  text-align: center;
+}
+
+
+img {
+    width: 400px;
+    height: 400px;
+    background-size: center center;
+}
+main section {
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  padding: 20px 0;
+}
+
+main article {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.pokemon__primary, .pokemon__secondary{
+    display: none;
+}
+.pokemon__thirdy{
+    display: block;
+}
+
+    .first__pokemon{
+        background-color:  #65c987;
+    }
+
+    .second__pokemon{
+        background-color: #b5604a ;
+    }
+
+    .third__pokemon{
+        background-color: #58aded;
+    }
+    .fourth__pokemon{
+        background-color: #7e3a9b;
+    }
+    .fifth__pokemon{
+        background-color: #c5d746;
+    }
+
+    @media (min-width: 768px) and  (max-width: 991px){
+  .pokemon__secondary{
+    display: block;
+  }
+  .pokemon__primary,.pokemon__thirdy{
+    display: none;
+  }
+  .first__pokemon{
+        background-color: #8cefb0;
+    }
+
+    .second__pokemon{
+        background-color: #f9b19f ;
+    }
+
+    .third__pokemon{
+        background-color: #98cef8;
+    }
+    .fourth__pokemon{
+        background-color: #d8aaeb;
+    }
+    .fifth__pokemon{
+        background-color: #ebf985;
+    }
+img {
+    width: 300px;
+    height: 300px;
+    background-size: center center;
+}
+}
+
+@media  (max-width: 767px) {
+  .pokemon__primary {
+    display: block;
+  }
+
+  .pokemon__secondary,
+  .pokemon__thirdy {
+    display: none;
+  }
+
+    .first__pokemon{
+        background-color: #beeace;
+    }
+
+    .second__pokemon{
+        background-color: #ffcec2 ;
+    }
+
+    .third__pokemon{
+        background-color: #c9e4f9;
+    }
+    .fourth__pokemon{
+        background-color: #ecd4f6;
+    }
+    .fifth__pokemon{
+        background-color: #f7ffbc;
+    }
+    img {
+    width: 200px;
+    height: 200px;
+    background-size: center center;
+}
+}
+
+
+
+
+
